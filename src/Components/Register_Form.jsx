@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { registerAPI } from "../Api/Auth";
 import { Link, useNavigate } from "react-router-dom";
+import { refreshAllUsers } from "../Store/Reducers/UserReducer";
 
 const Register_Form = () => {
   const { allUsers, userType } = useSelector((state) => state.allUsers);
@@ -47,6 +48,10 @@ const Register_Form = () => {
       alert("Please enter a valid email address...");
       return;
     }
+
+    let updatedUsers = [...allUsers, user];
+    localStorage.setItem("allUsers", JSON.stringify(updatedUsers));
+    Dispatch(refreshAllUsers());
 
     Navigate("/login");
   };
