@@ -49,7 +49,12 @@ const Register_Form = () => {
       return;
     }
 
-    let updatedUsers = [...allUsers, user];
+    let validUser = {
+      name: user.name,
+      email: user.email,
+      password: user.password1,
+    };
+    let updatedUsers = [...allUsers, validUser];
     localStorage.setItem("allUsers", JSON.stringify(updatedUsers));
     Dispatch(refreshAllUsers());
 
