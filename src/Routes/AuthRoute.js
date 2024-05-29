@@ -1,4 +1,5 @@
 import Home from "../Components/Home";
+import UserInfo from "../Components/UserInfo";
 
 export const AuthRoutes = [
   {
@@ -7,6 +8,6 @@ export const AuthRoutes = [
   },
   {
     path: "/user/info",
-    element: Home,
+    element: UserInfo,
   },
 ];

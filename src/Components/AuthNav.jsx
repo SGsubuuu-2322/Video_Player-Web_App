@@ -17,7 +17,7 @@ const AuthNav = () => {
         className="image-container hover:scale-110 w-30 h-10 rounded-md overflow-hidden"
       >
         <img
-          src="https://www.shutterstock.com/image-vector/shopping-logo-ecommerce-logotype-shooping-260nw-1978607771.jpg"
+          src="https://cdn.imgbin.com/4/19/17/imgbin-computer-icons-icon-design-video-player-design-Bz0EsxrM9J8cbKNr0Hw9XCQfK.jpg"
           alt="logo"
           className="w-full h-full object-contain"
         />
@@ -36,14 +36,14 @@ const AuthNav = () => {
             Home
           </NavLink>
           <NavLink
-            to="/account"
+            to="/user/info"
             className={(e) =>
               `rounded-lg border-2 hover:border-white  border-black px-3  text-xl font-semibold text-black hover:text-white hover:underline hover:underline-offset-2 ${
                 e.isActive && "border-white text-white shadow-lg "
               }`
             }
           >
-            Account
+            User-Info
           </NavLink>
           <button
             onClick={handleClick}
