@@ -14,7 +14,7 @@ const videosSlice = createSlice({
     addVideo: (state, action) => {
       state.videos.push(action.payload);
 
-      console.log(state.videos);
+      // console.log(state.videos);
     },
     bookmarkVideo: (state, action) => {
       const video = state.videos.find((video) => video.id === action.payload);

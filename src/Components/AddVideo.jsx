@@ -63,7 +63,7 @@ const AddVideo = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="w-1/2 p-4 bg-[#72045516] rounded-lg shadow-lg shadow-[#720455] translate-x-[-50px] translate-y-[-50px]"
+        className="w-1/2 p-4 bg-[#72045516] rounded-lg shadow-xl shadow-[#720455] translate-x-[-50px] translate-y-[-50px]"
       >
         <div className="mb-4">
           <label className="block text-gray-700">Video Name</label>
@@ -87,7 +87,7 @@ const AddVideo = () => {
         </div>
         <button
           type="submit"
-          className="p-2 bg-[#720455] active:scale-105 duration-200 text-white rounded"
+          className="p-1 bg-[#720455] border-2 border-[#720455] active:bg-white active:text-[#720455] active:scale-105 duration-300 text-white rounded"
           disabled={uploadStatus === "loading"}
         >
           {uploadStatus === "loading" ? "Uploading..." : "Add Video"}
