@@ -2,9 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa6";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { bookmarkVideo, deleteVideo } from "../Store/Reducers/VideosReducer";
+// import { useEffect } from "react";
 
 const VideoLists = () => {
   const videos = useSelector((state) => state.videos.videos);
+  //   const bookMarkVideos = useSelector((state) => state.videos.bookmarked);
   const dispatch = useDispatch();
 
   const handleToggleClick = (video) => {
@@ -12,8 +14,11 @@ const VideoLists = () => {
   };
   const handleDeletionClick = (video) => {
     dispatch(deleteVideo(video.id));
-    // console.log(videos);
   };
+
+  //   useEffect(() => {
+  //     console.log(videos, bookMarkVideos);
+  //   }, [videos, bookMarkVideos]);
 
   return (
     <div className="p-4 mb-16">

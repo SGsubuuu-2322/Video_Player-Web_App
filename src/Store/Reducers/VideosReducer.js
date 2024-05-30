@@ -48,6 +48,9 @@ const videosSlice = createSlice({
       return {
         ...state,
         videos: state.videos.filter((video) => video.id !== payload),
+        bookmarked: state.bookmarked.filter(
+          (bookmark) => bookmark.id !== payload
+        ),
       };
     },
 
