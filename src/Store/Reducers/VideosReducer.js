@@ -5,6 +5,7 @@ const initialState = {
   bookmarked: [],
   status: "idle",
   error: null,
+  currentVideo: null,
 };
 
 const videosSlice = createSlice({

@@ -26,7 +26,7 @@ const VideoLists = ({ lists }) => {
       {(lists === "All" ? videos : bookMarkVideos).map((video) => (
         <div
           key={video.id}
-          className="mb-4 p-4 bg-white rounded-lg shadow-md flex items-center justify-between shadow-lg shadow-[#720455]"
+          className="mb-4 p-4 bg-white rounded-lg shadow-md flex items-center justify-between shadow-lg shadow-[#720455] cursor-pointer"
         >
           <div className="flex items-center">
             <div className="flex items-center">
