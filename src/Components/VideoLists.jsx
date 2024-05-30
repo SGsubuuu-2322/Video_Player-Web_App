@@ -4,9 +4,10 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 import { bookmarkVideo, deleteVideo } from "../Store/Reducers/VideosReducer";
 // import { useEffect } from "react";
 
-const VideoLists = () => {
+const VideoLists = ({ lists }) => {
   const videos = useSelector((state) => state.videos.videos);
-  //   const bookMarkVideos = useSelector((state) => state.videos.bookmarked);
+  const bookMarkVideos = useSelector((state) => state.videos.bookmarked);
+
   const dispatch = useDispatch();
 
   const handleToggleClick = (video) => {
@@ -22,7 +23,7 @@ const VideoLists = () => {
 
   return (
     <div className="p-4 mb-16">
-      {videos.map((video) => (
+      {(lists === "All" ? videos : bookMarkVideos).map((video) => (
         <div
           key={video.id}
           className="mb-4 p-4 bg-white rounded-lg shadow-md flex items-center justify-between shadow-lg shadow-[#720455]"
