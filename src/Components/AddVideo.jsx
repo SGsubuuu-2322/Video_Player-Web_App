@@ -47,6 +47,7 @@ const AddVideo = () => {
           name: videoName,
           url: videoURL,
           thumbnail: thumbnailURL,
+          isBookMarked: false,
         };
         dispatch(addVideo(newVideo));
         setVideoFile(null);

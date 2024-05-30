@@ -18,10 +18,39 @@ const videosSlice = createSlice({
     },
     bookmarkVideo: (state, action) => {
       const video = state.videos.find((video) => video.id === action.payload);
-      if (video && !state.bookmarked.includes(video)) {
-        state.bookmarked.push(video);
+      const isVideoBookmarked = state.bookmarked.some(
+        (bookmark) => bookmark.id === video.id
+      );
+
+      if (video && !isVideoBookmarked) {
+        return {
+          ...state,
+          bookmarked: [...state.bookmarked, video],
+          videos: state.videos.map((v) =>
+            v.id === video.id ? { ...v, isBookMarked: true } : v
+          ),
+        };
+      } else if (isVideoBookmarked) {
+        return {
+          ...state,
+          bookmarked: state.bookmarked.filter(
+            (bookmark) => bookmark.id !== video.id
+          ),
+          videos: state.videos.map((v) =>
+            v.id === video.id ? { ...v, isBookMarked: false } : v
+          ),
+        };
       }
+      return state;
     },
+
+    deleteVideo: (state, { payload }) => {
+      return {
+        ...state,
+        videos: state.videos.filter((video) => video.id !== payload),
+      };
+    },
+
     setStatus: (state, action) => {
       state.status = action.payload;
     },
@@ -31,7 +60,7 @@ const videosSlice = createSlice({
   },
 });
 
-export const { addVideo, bookmarkVideo, setStatus, setError } =
+export const { addVideo, bookmarkVideo, deleteVideo, setStatus, setError } =
   videosSlice.actions;
 
 export default videosSlice.reducer;
