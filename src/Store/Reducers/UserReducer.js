@@ -28,11 +28,9 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(userListAPI.fulfilled, (state, action) => {
-      action.payload.profileImg =
-        "https://cdn3d.iconscout.com/3d/premium/thumb/user-6332708-5209354.png";
-      state.allUsers = [...state.allUsers, action.payload];
-      localStorage.setItem("allUsers", JSON.stringify(state.allUsers));
+    builder.addCase(userListAPI.fulfilled, (state, { payload }) => {
+      // console.log(payload);
+      return { ...state, userList: [payload] };
     });
   },
 });

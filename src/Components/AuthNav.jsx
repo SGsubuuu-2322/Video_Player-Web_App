@@ -29,7 +29,7 @@ const AuthNav = () => {
             to="/"
             className={(e) =>
               `rounded-lg border-2 hover:border-white  border-black px-3  text-xl font-semibold text-black hover:text-white hover:underline hover:underline-offset-2 ${
-                e.isActive && "border-white text-white shadow-lg "
+                e.isActive && "border-white text-white shadow-md shadow-white"
               }`
             }
           >
@@ -39,7 +39,7 @@ const AuthNav = () => {
             to="/user/info"
             className={(e) =>
               `rounded-lg border-2 hover:border-white  border-black px-3  text-xl font-semibold text-black hover:text-white hover:underline hover:underline-offset-2 ${
-                e.isActive && "border-white text-white shadow-lg "
+                e.isActive && "border-white text-white shadow-md shadow-white"
               }`
             }
           >
