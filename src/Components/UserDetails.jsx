@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const UserDetails = () => {
   const loggedInUser = useSelector((state) => state.allUsers.loggedInUser);
-  console.log(loggedInUser);
 
   return (
     <div className="translate-x-[-50px] translate-y-[-50px] w-1/3 bg-[#720455] rounded-2xl p-6 flex flex-col items-center gap-2">
