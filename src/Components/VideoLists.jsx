@@ -1,7 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FaHeart } from "react-icons/fa6";
 import { IoCloseCircleSharp } from "react-icons/io5";
-import { bookmarkVideo, deleteVideo } from "../Store/Reducers/VideosReducer";
+import {
+  bookmarkVideo,
+  deleteVideo,
+  showCurrentVideo,
+} from "../Store/Reducers/VideosReducer";
+import { FaPlayCircle } from "react-icons/fa";
+
 // import { useEffect } from "react";
 
 const VideoLists = ({ lists }) => {
@@ -15,6 +21,10 @@ const VideoLists = ({ lists }) => {
   };
   const handleDeletionClick = (video) => {
     dispatch(deleteVideo(video.id));
+  };
+
+  const addCurrentVideo = (video) => {
+    dispatch(showCurrentVideo(video));
   };
 
   //   useEffect(() => {
@@ -39,7 +49,12 @@ const VideoLists = ({ lists }) => {
             </div>
             <h3 className="text-lg font-semibold">{video.name}</h3>
           </div>
-          <span className="flex gap-2">
+          <span className="flex gap-2 text-lg">
+            <FaPlayCircle
+              className="hover:text-red-500 active:scale-125 duration-200"
+              onClick={() => addCurrentVideo(video)}
+            />
+
             {video.isBookMarked ? (
               <FaHeart
                 className="hover:text-red-500 active:scale-125 duration-200 text-red-500"

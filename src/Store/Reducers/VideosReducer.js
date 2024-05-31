@@ -14,8 +14,6 @@ const videosSlice = createSlice({
   reducers: {
     addVideo: (state, action) => {
       state.videos.push(action.payload);
-
-      // console.log(state.videos);
     },
     bookmarkVideo: (state, action) => {
       const video = state.videos.find((video) => video.id === action.payload);
@@ -55,6 +53,19 @@ const videosSlice = createSlice({
       };
     },
 
+    showCurrentVideo: (state, { payload }) => {
+      return {
+        ...state,
+        currentVideo: payload,
+      };
+    },
+    removeCurrentVideo: (state) => {
+      return {
+        ...state,
+        currentVideo: null,
+      };
+    },
+
     setStatus: (state, action) => {
       state.status = action.payload;
     },
@@ -64,7 +75,14 @@ const videosSlice = createSlice({
   },
 });
 
-export const { addVideo, bookmarkVideo, deleteVideo, setStatus, setError } =
-  videosSlice.actions;
+export const {
+  addVideo,
+  bookmarkVideo,
+  deleteVideo,
+  showCurrentVideo,
+  removeCurrentVideo,
+  setStatus,
+  setError,
+} = videosSlice.actions;
 
 export default videosSlice.reducer;
