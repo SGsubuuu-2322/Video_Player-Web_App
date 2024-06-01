@@ -7,7 +7,7 @@ export const userListAPI = createAsyncThunk("user-register", async () => {
       `https://jsonplaceholder.typicode.com/users`
     );
     // console.log(response.data);
-    return { ...response.data };
+    return response.data;
   } catch (err) {
     console.log(err.response);
   }

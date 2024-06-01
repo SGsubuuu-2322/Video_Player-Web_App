@@ -30,7 +30,7 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(userListAPI.fulfilled, (state, { payload }) => {
       // console.log(payload);
-      return { ...state, userList: [payload] };
+      return { ...state, userList: payload };
     });
   },
 });
