@@ -2,8 +2,8 @@ import { MdPersonSearch } from "react-icons/md";
 
 const SearchBar = () => {
   return (
-    <div className="fixed w-[25%] mt-2">
-      <form className="flex justify-between bg-[#720455] p-2 shadow-xl shadow-[#720455]">
+    <div className="w-full">
+      <form className="flex justify-between bg-[#720455] p-2 ">
         <input
           type="text"
           name="searc-term"

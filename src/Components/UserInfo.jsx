@@ -25,7 +25,7 @@ const UserInfo = () => {
         <UserDetails />
       </div>
       <div className="h-full w-[25%] bg-[#72045560] flex flex-col gap-2 overflow-y-auto">
-        <div className="w-full mb-12">
+        <div className="fixed top-20 right-0 w-1/4 pt-3 pb-3 bg-opacity-40 backdrop-filter backdrop-blur">
           <SearchBar />
         </div>
         {userLists ? <UserLists data={userLists} /> : <></>}

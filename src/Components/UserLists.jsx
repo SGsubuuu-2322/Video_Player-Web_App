@@ -1,7 +1,7 @@
 const UserLists = ({ data }) => {
   console.log(data);
   return (
-    <div className="w-full flex flex-col p-4 mb-16">
+    <div className="w-full flex flex-col p-4 pt-20 mb-16">
       {data.map((item, index) => (
         <div
           key={index}
